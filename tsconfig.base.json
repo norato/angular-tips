@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@angular-tips/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@angular-tips/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@angular-tips/design-system": ["libs/design-system/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
