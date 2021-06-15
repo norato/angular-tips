@@ -125,6 +125,37 @@
             "jestConfig": "apps/angular-tips/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "apps/angular-tips/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/angular-tips",
+            "config": {
+              "configFolder": "apps/angular-tips/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
         }
       }
     },
