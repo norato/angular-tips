@@ -1,19 +1,17 @@
-import { Component } from '@angular/core';
-import { TestBed, async } from '@angular/core/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { createComponentFactory, Spectator } from '@ngneat/spectator';
+
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [HttpClientModule],
-    }).compileComponents();
-  }));
+  let app: Spectator<AppComponent>;
+  const createComponent = createComponentFactory({
+    component: AppComponent,
+    imports: [HttpClientTestingModule],
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    app = createComponent();
     expect(app).toBeTruthy();
   });
 });
